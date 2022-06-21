@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Entities.Concrete.Vacation>
+
+@{
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Vacations</title>
+</head>
+<body>
+<p>
+    <a asp-action="CreateVacation">Yeni Tatil Oluştur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tatil Adı
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-action="EditVacation" asp-route-id="@item.Id">Güncelle</a> |
+                <a asp-action="DeleteVacation" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
+
+

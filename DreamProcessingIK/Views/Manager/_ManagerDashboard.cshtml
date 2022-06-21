@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "~/Views/Shared/_Manager.cshtml";
+}
+
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y" style="margin-left:50px">
+              <div class="row">
+               <!--Welcome Başlangıç-->
+             @*  <partial name="_welcome" />*@
+               <!--Welcome Bitiş -->
+
+             <!------------------------------------------------------------------------------------------------------------>
+                <div class="container-xxl flex-grow-1 container-p-y" >
+              
+               <!--Company Date List Start-->
+               <!--FİRMALARIN TARİHLERİNE GÖRE SIRALAMASI OLACAK OLAN LİST SAYFASI-->
+             
+                <partial name="_birthday" />
+                 <partial name="_CostList" />
+                 <partial name="_publicHoliday" />
+               </div>
+               <!--Company Date List End-->
+
+              <!------------------------------------------------------------------------------------------------------------>
+
+                <div class="col-lg-4 col-md-4 order-1">
+                  <div class="row">
+                       <!--Number Of Company Start -->
+
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <partial name="_numberofCompany" />
+                    </div>
+                    
+                       <!--Number Of Company End -->
+
+                <!------------------------------------------------------------------------------------------------------------>
+                   
+                 <!--Number Of Executive Start -->
+
+                   <div class="col-lg-6 col-md-12 col-6 mb-4">
+                        
+                      <partial name="_numberOfExecute" />
+                      
+                    </div>
+
+                 <div class="col-lg-6 col-md-12 col-6" >
+                
+                    <!--Number Of Executive End-->
+                    </div>
+                        </div>
+                    
+
+                <!------------------------------------------------------------------------------------------------------------>
+
+
+                <!--Number of Employee Start-->
+                @*<div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+                  <div class="row">
+                    <partial name="_numberofEmployee">
+                    </div>
+                    </div>*@
+                    <!--Number of Employee End -->
+               <!------------------------------------------------------------------------------------------------------------>
+                   <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row">
+               <!--Company Date List Start-->
+             
+               <partial name="_chart" />
+               <!--Company Date List End-->
+                <!------------------------------------------------------------------------------------------------------------>
+                      </div>
+                </div>
+              </div>
+               </div>
+              </div>

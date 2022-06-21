@@ -1,0 +1,95 @@
+﻿<nav class="navbar-default navbar-static-side" style="margin-left:0px" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/img/profile_small.jpg" />
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="block m-t-xs font-bold">Bilen Giyim</span>
+                        <span class="text-muted text-xs block">software <b class="caret"></b></span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                        <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
+                        <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" asp-controller="Home" asp-action="LogOut" asp-route-returnUrl="/Home/LogIn">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+           @* <li>
+                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="index.html">Dashboard v.1</a></li>
+                    <li><a href="dashboard_2.html">Dashboard v.2</a></li>
+                    <li><a href="dashboard_3.html">Dashboard v.3</a></li>
+                    <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                    <li><a href="dashboard_5.html">Dashboard v.5 </a></li>
+                </ul>
+            </li>*@
+
+             <li>
+                <a  asp-action="_ManagerDashboard" asp-controller="Manager"><i class="fa fa-pencil"></i> <span class="nav-label"> Dashboard</span>  </a>
+            </li>
+
+             @* <li>
+                <a asp-controller="Manager" asp-action="Chart"><i class="fa fa-pie-chart"></i> <span class="nav-label">Personel Grafik Detay</span>  </a>
+            </li>*@
+            <li>
+
+                <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Personel Yönetimi</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a asp-controller="Manager" asp-action="CompanyEmployee">Personel Bilgileri</a></li>
+                    <li><a asp-controller="Manager" asp-action="AddEmployee">Personel İşlemleri</a></li>
+                    <li><a asp-controller="Manager" asp-action="ApprovedVacation">Personel İzin İşlemleri</a></li>
+                  
+       
+                    <li><a asp-controller="Manager" asp-action="UserBountyList">Personel Prim İşlemleri</a></li>
+                    <li><a asp-controller="Manager" asp-action="PersonnelDocumentList">Personel Özlük Belgeleri</a></li>
+                    <li><a asp-action="CreateShift" asp-controller="Manager" >Personel Vardiya İşlemleri</a></li>
+                    <li><a asp-action="CreateBreak" asp-controller="Manager" >Personel Mola İşlemleri</a></li>
+                    <li><a asp-action="ListEmployeeCompany" asp-controller="Manager" >Personel Mola/Shift Listele</a></li>
+                    <li>
+
+                <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Zimmet Ayarları</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a asp-controller="Manager" asp-action="GivenDebit">Verilen Zimmet Listesi</a></li>
+                    <li><a asp-controller="Manager" asp-action="Companyemployee">Zimmet Ekle</a></li>
+                     <li><a asp-controller="Manager" asp-action="DebitList">Zimmet Eşyaları</a></li>
+                 
+                  
+                </ul>
+            </li>
+                  
+                </ul>
+            </li>
+            <li>
+
+                <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Üye Ayarları</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a asp-controller="Home" asp-action="UserEditManager">Kullanıcı Bilgileri</a></li>
+                    <li><a asp-controller="Manager" asp-action="ChangePassword">Şifre Güncelle</a></li>
+                 
+                  
+                </ul>
+            </li>
+            <li>
+       
+                <a asp-controller="Manager" asp-action="AddComment"><i class="fa fa-pie-chart"></i> <span class="nav-label">Şirket Yorum Ekleme</span>  </a>
+            </li>
+           
+           @* <li>
+                <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Üyelik İşlemleri </span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a asp-controller="Admin" asp-action="UsersConfirm">Yönetici Onay Durumu</a></li>
+                    <li><a asp-controller="Home" asp-action="Membership">Üyelik Planlama</a></li>
+                  
+                </ul>*@
+
+             
+       
+    </div>
+</nav>

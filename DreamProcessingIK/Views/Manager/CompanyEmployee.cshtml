@@ -1,0 +1,42 @@
+﻿@model List<EmployeeListCompanyDto>
+@{
+    Layout = "~/Views/Shared/_Manager.cshtml";
+}
+<h1>Personel İşlemleri</h1>
+<table class="table table-bordered table-striped">
+    <tr>
+       
+        <th>Adı</th>
+        <th>Soyadı</th>
+    </tr>
+    @if(@Model.Count()==0)
+    {
+        <tr>
+            <td colspan=3>Mevcut çalışanınız yoktur</td>
+        </tr>
+    }
+    else
+    {
+        @foreach (var item in Model)
+       {
+           <tr>
+              
+               <td>@item.FirstName</td>
+               <td>@item.LastName</td>
+               <td><a href="/Manager/AddDebit?id=@item.UserId" type="sumbit" class="btn btn-success"> Zimmet Ekle</a>   </td>
+               <td><a href="/Manager/AddPersonnelDocument?id=@item.UserId" type="sumbit" class="btn btn-success"> Özlük Belgesi Ekle</a>   </td>
+               <td><a href="/Manager/EmployeeEdit?id=@item.UserId" type="sumbit" class="btn btn-warning"> Kullanıcı Düzenle</a>   </td>
+                 <td><a href="/Manager/ChangePassword?id=@item.UserId" type="sumbit" class="btn btn-warning"> Kullanıcı Şifre Değiştir</a>   </td>
+                 @if(item.IsConfirmed==true)
+                {
+                    <td><a href="/Manager/PassiveEmployee?id=@item.UserId"  class="btn btn-danger"> Kullanıcıyı Pasif Et</a>   </td>
+                }
+                else if(item.IsConfirmed==false)
+                {
+                  <td><a href="/Manager/PassiveEmployee?id=@item.UserId" t class="btn btn-success"> Kullanıcı Aktif Et</a>   </td>
+                }
+           </tr>
+       }
+    }
+</table>
+

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Entities.Concrete.Debit>
+
+@{
+    Layout = "~/Views/Shared/_Manager.cshtml";
+}
+<h1> Verilen Zimmet Listesi </h1>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DebitList</title>
+</head>
+<body>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Ürün Adı
+            </th>
+            <th>
+               Ürün Detayı
+            <th>
+               Kategori
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDetail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
